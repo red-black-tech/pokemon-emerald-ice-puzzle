@@ -3,11 +3,10 @@ from random import shuffle
 __author__ = 'Roni Lazimi'
 __email__ = 'thecurrentsolution@gmail.com'
 
-DEMO = False
 PCT_VALID = 0.75
 
 WIDTH = 7
-HEIGHT = 4
+HEIGHT = 5
 SPACING = 100
 
 PLAYER = 0
