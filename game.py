@@ -4,7 +4,7 @@ DEMO = False
 PCT_VALID = 0.75
 
 WIDTH = 7
-HEIGHT = 5
+HEIGHT = 4
 SPACING = 100
 
 PLAYER = 0
@@ -13,17 +13,17 @@ BROKEN_TILE = 2
 ROCK = 3
 
 tile_type_to_art = [
-    '🥷 ',
+    '🥷',
     '🟦',
     '🌀',
-    '🪨 '
+    '🪨'
 ]
 
 
-def render(board, win=False, art_size=2):
-    image = ' ' * art_size * (len(board[0]) // 2) + '🐉'
+def render(board, win=False):
+    image = ' ' * (len(board[0]) // 2) + '🐉'
     if win:
-        image += '\n' + ' ' * art_size * (len(board[0]) // 2) + '||'
+        image += '\n' + ' ' * (len(board[0]) // 2) + '||'
     else:
         image += '\n'
     for row in board:
