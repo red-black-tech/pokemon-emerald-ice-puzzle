@@ -1,5 +1,8 @@
 from random import shuffle
 
+__author__ = 'Roni Lazimi'
+__email__ = 'thecurrentsolution@gmail.com'
+
 DEMO = False
 PCT_VALID = 0.75
 
@@ -13,10 +16,10 @@ BROKEN_TILE = 2
 ROCK = 3
 
 tile_type_to_art = [
-    '🥷',
+    '🥷 ',
     '🟦',
     '🌀',
-    '🪨'
+    '🪨 '
 ]
 
 
