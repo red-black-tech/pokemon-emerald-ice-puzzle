@@ -85,6 +85,8 @@ def generate_game(board, start, end, pct_valid=0.75):
 
         if tile == end and depth > int(size(board)*pct_valid):
             return depth
+        elif tile == end:
+            return 0
 
         for candidate in [c for c in randomized(neighbors(tile)) if is_candidate(c)]:
             r, c = candidate
