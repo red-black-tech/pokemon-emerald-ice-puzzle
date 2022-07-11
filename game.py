@@ -3,6 +3,8 @@ from random import shuffle
 __author__ = 'Roni Lazimi'
 __email__ = 'thecurrentsolution@gmail.com'
 
+DEMO = True
+
 PCT_VALID = 0.75
 
 WIDTH = 7
@@ -23,9 +25,9 @@ tile_type_to_art = [
 
 
 def render(board, win=False):
-    image = ' ' * (len(board[0]) // 2) + '🐉'
+    image = '  ' * (len(board[0]) // 2) + '🐉'
     if win:
-        image += '\n' + ' ' * (len(board[0]) // 2) + '||'
+        image += '\n' + '  ' * (len(board[0]) // 2) + '||'
     else:
         image += '\n'
     for row in board:
@@ -63,16 +65,13 @@ def neighbors(coords):
         (row, col+1)
     ]
 
-
 def size(board):
     return len(board) * len(board[0])
-
 
 def randomized(l):
     copy = list(l)
     shuffle(copy)
     return copy
-
 
 def generate_game(board, start, end, pct_valid=0.75):
     def is_candidate(coords):
@@ -88,7 +87,8 @@ def generate_game(board, start, end, pct_valid=0.75):
         elif tile == end:
             return 0
 
-        for candidate in [c for c in randomized(neighbors(tile)) if is_candidate(c)]:
+        for candidate in filter(is_candidate, randomized(neighbors(tile))):
+
             r, c = candidate
             board[r][c] = TILE  # fix(candidate)
 
